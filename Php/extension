@@ -1,0 +1,29 @@
+Install Mailhog
+https://www.lullabot.com/articles/installing-mailhog-for-ubuntu-1604
+
+Install Xdebug
+ Chrome extenstion: https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en
+ Php:
+    sudo apt-get install php-xdebug
+    sudo nano /etc/php/7.2/fpm/php.ini
+    sudo nano /etc/php/7.2/cli/php.ini
+
+    // Add content
+    zend_extension = /usr/lib/php/20170718/xdebug.so
+
+    xdebug.remote_enable = 1
+    xdebug.remote_connect_back = 1
+    xdebug.remote_port = 9000
+    xdebug.remote_autostart = 0
+
+    xdebug.show_exception_trace = 0
+    xdebug.show_error_trace = 1
+    xdebug.show_local_vars = 0
+    xdebug.max_nesting_level = 1024
+    xdebug.var_display_max_data = 10000
+    xdebug.var_display_max_depth = 20
+
+    xdebug.idekey = RAMPAGE
+
+    xdebug.file_link_format = phpstorm://open?%f:%l
+
